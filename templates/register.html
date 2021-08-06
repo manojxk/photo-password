@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Securii</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+
+  <body>
+    <form
+      class="box"
+      action="{{ url_for('register') }}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <h1>Register</h1>
+      <input type="text" name="username" placeholder="Username" />
+      {% if usernameTaken %}
+        {% if usernameTaken == True %}
+        <p style="color: red;">This Username has already been taken.</p>
+        {% endif %}
+        
+      {% endif %}
+      <input
+        type="file"
+        name="file"
+        id="file"
+        onchange="pressed()"
+        style="display: none"
+        accept=".jpg,.png"
+      />
+      <label for="file" id="fileLabel">Set secure image</label>
+      <input type="submit" name="" value="Create account" />
+      <a href="{{ url_for('index') }}">Back to login</a>
+    </form>
+    <script type="text/javascript">
+      window.pressed = function () {
+        var a = document.getElementById("file");
+        if (a.value == "") {
+          fileLabel.innerHTML = "Choose file";
+        } else {
+          var theSplit = a.value.split("\\");
+          fileLabel.innerHTML = theSplit[theSplit.length - 1];
+        }
+      };
+    </script>
+  </body>
+</html>

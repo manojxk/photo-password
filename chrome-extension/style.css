@@ -1,0 +1,119 @@
+body {
+  box-shadow: 15px 25px black;
+  border: 0.5px solid grey;
+  margin: 0;
+  padding: 10px;
+  font-family: "Lato", sans-serif;
+  /* background-image: url("https://insidesources.com/wp-content/uploads/2017/02/bigstock-Baker-Library-999916.jpg"); */
+  /* background-size: cover; */
+  min-height: 80vh;
+  min-width: 70vh;
+  height: 400px;
+  width: 350px;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+label {
+  color: white;
+}
+
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 10vh;
+  text-align: center;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 500;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+.box input[type="text"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.15s;
+}
+
+.box input[type="text"]:hover {
+  border: 3px solid white;
+}
+
+.box input[type="submit"] {
+  bottom: 10px;
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid white;
+  padding: 14px 40px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background: #dfdddd;
+}
+
+#optional {
+  display: none;
+}
+
+#toggle {
+  text-decoration: underline;
+  color: white;
+  cursor: pointer;
+}
+
+#demo {
+  position: absolute;
+  color: #313131;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  padding-right: 5px;
+  color: white;
+  padding: 0;
+  -webkit-animation: fadein 0.5s;
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
