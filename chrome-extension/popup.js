@@ -16,42 +16,30 @@ thisForm.addEventListener("submit", async function (e) {
     caps = "false";
   }
   var length = formData.get("length");
-  console.log(
-    "https://photocrypthack.herokuapp.com/" +
-      url +
-      "/" +
-      caps +
-      "/" +
-      chars +
-      "/" +
-      length
-  );
-  const response = await fetch(
-    "https://photocrypthack.herokuapp.com/" +
-      url +
-      "/" +
-      caps +
-      "/" +
-      chars +
-      "/" +
-      length,
-    {
-      mode: "no-cors",
-      method: "GET",
-    }
-  );
+
+  const URL= "https://fun9799.herokuapp.com/" +  url + "/" + caps + "/" + chars +  "/" +  length.toString()
+
+  console.log(URL)
 
   var x = document.getElementById("optional");
   x.style.display = "none";
   document.getElementById("demo").style.display = "block";
-  try {
-    const result = await response.json();
-    document.getElementById("demo").innerHTML = "Code: " + result.code;
-    document.getElementById("demo").style.color = "#313131";
-  } catch (err) {
-    document.getElementById("demo").innerHTML = "Invalid URL";
+
+  var requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+  fetch(URL, requestOptions)
+    .then(response => response.json())
+    .then(result => {
+      document.getElementById("demo").innerHTML = "Code: " + result.code;
+      document.getElementById("demo").style.color = "#313131";
+    })
+    .catch(error => {
+      document.getElementById("demo").innerHTML = error;
     document.getElementById("demo").style.color = "red";
-  }
+    });
 
   thisForm.reset();
 });
