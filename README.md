@@ -22,4 +22,4 @@ We learned all about chrome extension development, and how to create and request
 ## What's next for Photocrypt! 🚀
 The next big thing for Photocrypt is its endless application and uses over many website domains, whether that is for logging into an account or for making a payment online. We wish to integrate our chrome extension further to cover areas such as video encryption. The possibilities for Photocrypt are endless!
 
-Message Michael Beer#7583 or Angler#5664 or Roshan#9335 for any questions!
+
