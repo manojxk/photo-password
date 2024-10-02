@@ -1,25 +1,54 @@
-## A picture can tell 1000 words ... though, what about a password?  About 15 characters MAX.
+# Photocrypt - Revolutionizing Account Security 🔐
+
+## A picture can tell a thousand words, but what about a password? 🤔  
+
+
+---
 
 ## Inspiration 💡
-Passwords are severely outdated. The concept of a password was created in the early 1970's before hacking and internet law were even born. **Passwords have major flaws** that are clearly visible, leading to millions of dollars lost and billions of accounts being compromised every year. The password is **often the biggest vulnerability**, due to the laziness and predictable words that can easily be fished by criminals. Passwords are also easily forgettable, **what was your first password? Can't remember? Exactly.**
+Passwords are relics of a time before the internet and cybersecurity. **Photocrypt** was inspired by the flaws in traditional password systems—**predictability, vulnerability, and forgetfulness**. Hackers easily exploit weak passwords, and most people can't even recall their first password. It's time for a better solution.
 
-## Our solution ⚙️
-We have created a solution. Photocrypt is a new form of account security, currently being used through our chrome web extension, where anyone can upload a private or public image, both locally and through a URL. This image is then encrypted with **the same encryption used in Bitcoin and Ethereum**. Every passcode is unique to its image, with one single dimension being off generating an entirely different passcode. The passcode can then be customised to fit the individual sites password validation, including the addition of special characters, capital letters, and the length of the code. It is basic psychology that images are much more memorable than jumbled words. Images are a clear solution to an outdated and flawed security system, passwords can just not hold up against the ever-expanding domain of cybersecurity
+---
 
-## How we built it 🛠️
-Our chrome extension works by receiving custom parameters about the current site validation, along with a local file upload or URL, this extension is created using JS. Once an image is submitted, the extension converts this image into a uir8 string displaying the individual pixels and colour. The flask API is then called which parses the image string. At the other end, the image is then reshaped and converted into an Ascii string [image to ascii](https://wiki.cdot.senecacollege.ca/w/imgs/thumb/R2d2.jpg/700px-R2d2.jpg.png). From there it is then encrypted using the sha256 algorithm, the most common and secure hashing algorithm in the world. This code is then passed back and formatted to fit the validation requirements, without changing the original hash encryption.
-A site was also created to display this technology, which was created using flask and a MongoDB database for storing users.
+## My Solution ⚙️
+**Photocrypt** replaces outdated passwords with image-based encryption. By uploading an image—whether from a local file or a URL—users generate a secure, unique passcode. **SHA-256 encryption**, the same standard used in **Bitcoin and Ethereum**, ensures that each image results in a distinct passcode, with even the slightest change in the image creating an entirely different passcode.
 
-## Challenges we ran into 🚧
-None of us had previously worked with google chrome extensions before and only one of us had experience using Flask. This was a steep learning curve for all of us but was very beneficial. The communication was initially a struggle as well due to our poor time zones, but this is discussed later.
+The generated passcode can be customized to fit website-specific password criteria, such as including special characters or adjusting the length, making it a flexible and powerful solution for the modern digital world.
 
-## Accomplishments that we're proud of 🌟
-We knew coordination would be a challenge as we are an international team from 3 different continents and hence, 3 extremely different time zones. We stepped up to the challenge and made it work, by delegating each person with tasks of equal work, we managed to lower the workload all while keeping good communication all while being up to 7 hours apart. Another accomplishment we are proud of is the file upload feature, as it is a fairly complex task with chrome extensions.
+---
 
-## What we learned 📖
-We learned all about chrome extension development, and how to create and request a REST API. We also learned about MongoDB for the first time, and how to deploy on Heroku. We finally learned the basics of encryption using the different Standard Hashing Algorithms (SHA) which is big in today's blockchain technologies.
+## How I Built It 🛠️
+The **Photocrypt** Chrome extension operates through a streamlined process:
+1. **Input**: Users upload an image or provide a URL.
+2. **Processing**: The image is converted into a Uint8 array representing its pixel data.
+3. **Encryption**: A Flask API processes the image data, converting it to an ASCII string and encrypting it using **SHA-256**.
+4. **Customization**: The encrypted passcode is formatted to meet website-specific password validation requirements.
 
-## What's next for Photocrypt! 🚀
-The next big thing for Photocrypt is its endless application and uses over many website domains, whether that is for logging into an account or for making a payment online. We wish to integrate our chrome extension further to cover areas such as video encryption. The possibilities for Photocrypt are endless!
+Additionally, I built a **Flask web application** with a **MongoDB database** to store user data and showcase the technology.
 
+---
 
+## Challenges I Encountered 🚧
+Since I had never worked with **Chrome extensions** before, and my experience with **Flask** was limited, it was a steep learning curve. Coordinating tasks and ensuring smooth communication, especially with time zone differences, was also a challenge.
+
+---
+
+## Accomplishments 🌟
+I successfully:
+- Implemented the **file upload feature** in the Chrome extension, a technically challenging milestone.
+- Overcame the steep learning curve in Chrome extension development and Flask API integration.
+
+---
+
+## What I Learned 📖
+- **Chrome extension development**: I learned how to create a functional and user-friendly Chrome extension.
+- **API development**: I built a RESTful API using Flask to handle image processing and encryption.
+- **MongoDB**: This project introduced me to NoSQL databases, specifically MongoDB, for storing and managing user data.
+- **Encryption techniques**: I deepened my knowledge of encryption, especially **SHA-256**, which is crucial in blockchain and cybersecurity technologies.
+
+---
+
+## What's Next for Photocrypt 🚀
+The possibilities for **Photocrypt** are vast. Next steps include expanding its application to other forms of media, such as **video encryption**. I also aim to increase its compatibility with more websites and explore potential integrations with online payment platforms. **The future of account security lies in Photocrypt.**
+
+---
